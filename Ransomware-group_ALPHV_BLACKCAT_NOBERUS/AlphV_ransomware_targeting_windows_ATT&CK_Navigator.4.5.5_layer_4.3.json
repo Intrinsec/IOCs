@@ -4395,9 +4395,10 @@
 		{
 			"techniqueID": "T1112",
 			"tactic": "defense-evasion",
+			"score": 1,
 			"color": "#fca2a2",
 			"comment": "",
-			"enabled": false,
+			"enabled": true,
 			"metadata": [],
 			"links": [],
 			"showSubtechniques": false
