@@ -1304,9 +1304,10 @@
 		{
 			"techniqueID": "T1059.003",
 			"tactic": "execution",
+			"score": 1,
 			"color": "#fca2a2",
 			"comment": "",
-			"enabled": false,
+			"enabled": true,
 			"metadata": [],
 			"links": [],
 			"showSubtechniques": false
@@ -1314,9 +1315,10 @@
 		{
 			"techniqueID": "T1059.004",
 			"tactic": "execution",
+			"score": 1,
 			"color": "#fca2a2",
 			"comment": "",
-			"enabled": false,
+			"enabled": true,
 			"metadata": [],
 			"links": [],
 			"showSubtechniques": false
