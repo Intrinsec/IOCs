@@ -2851,9 +2851,10 @@
 		{
 			"techniqueID": "T1567",
 			"tactic": "exfiltration",
+			"score": 1,
 			"color": "#fca2a2",
 			"comment": "",
-			"enabled": false,
+			"enabled": true,
 			"metadata": [],
 			"links": [],
 			"showSubtechniques": true
