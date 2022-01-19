@@ -6545,9 +6545,10 @@
 		{
 			"techniqueID": "T1016",
 			"tactic": "discovery",
+			"score": 1,
 			"color": "#fca2a2",
 			"comment": "",
-			"enabled": false,
+			"enabled": true,
 			"metadata": [],
 			"links": [],
 			"showSubtechniques": true
@@ -6565,6 +6566,7 @@
 		{
 			"techniqueID": "T1049",
 			"tactic": "discovery",
+			"score": 1,
 			"color": "#fca2a2",
 			"comment": "",
 			"enabled": true,
