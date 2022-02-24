@@ -1,5 +1,5 @@
 {
-	"name": "layer",
+	"name": "Intrusion_Set_LAPSUS$",
 	"versions": {
 		"attack": "10",
 		"navigator": "4.5.5",
@@ -1366,19 +1366,21 @@
 		{
 			"techniqueID": "T1586",
 			"tactic": "resource-development",
-			"color": "",
+			"score": 1,
+			"color": "#fca2a2",
 			"comment": "",
-			"enabled": false,
+			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1586.001",
 			"tactic": "resource-development",
-			"color": "",
+			"score": 1,
+			"color": "#fca2a2",
 			"comment": "",
-			"enabled": false,
+			"enabled": true,
 			"metadata": [],
 			"links": [],
 			"showSubtechniques": false
