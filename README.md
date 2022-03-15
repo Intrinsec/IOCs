@@ -18,4 +18,4 @@ You can find me on [![Twitter][1.2]][1], or on [![LinkedIn][3.2]][3].
 <!-- Links to your social media accounts -->
 
 [1]: https://twitter.com/Intrinsec
-[2]: https://www.linkedin.com/company/intrinsec/posts/?feedView=all
+[2]: https://linkedin.com/company/intrinsec/
