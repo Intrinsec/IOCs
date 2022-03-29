@@ -276,9 +276,10 @@
 		{
 			"techniqueID": "T1087.001",
 			"tactic": "discovery",
-			"color": "",
+			"score": 1,
+			"color": "#fca2a2",
 			"comment": "",
-			"enabled": false,
+			"enabled": true,
 			"metadata": [],
 			"links": [],
 			"showSubtechniques": false
@@ -3745,9 +3746,10 @@
 		{
 			"techniqueID": "T1562",
 			"tactic": "defense-evasion",
-			"color": "",
+			"score": 1,
+			"color": "#fca2a2",
 			"comment": "",
-			"enabled": false,
+			"enabled": true,
 			"metadata": [],
 			"links": [],
 			"showSubtechniques": true
@@ -4555,9 +4557,10 @@
 		{
 			"techniqueID": "T1003",
 			"tactic": "credential-access",
-			"color": "",
+			"score": 1,
+			"color": "#fca2a2",
 			"comment": "",
-			"enabled": false,
+			"enabled": true,
 			"metadata": [],
 			"links": [],
 			"showSubtechniques": true
@@ -4595,9 +4598,10 @@
 		{
 			"techniqueID": "T1003.006",
 			"tactic": "credential-access",
-			"color": "",
+			"score": 1,
+			"color": "#fca2a2",
 			"comment": "",
-			"enabled": false,
+			"enabled": true,
 			"metadata": [],
 			"links": [],
 			"showSubtechniques": false
